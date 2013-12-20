@@ -1,14 +1,18 @@
-<!doctype html>
+{% extends "base.html" %}
+{% block title %}QRcode result{% endblock %}
 
-<head>
-    <title>Barcode result</title>
-</head>
-
-<body>
-<div>
-    <h1>Barcode result for <a href="{{ file_url }}">{{ filename }}</a></h1>
-    <img src="{{url}}"/>
-    <a href="/upload">Upload another one</a>
+{% block container %}
+<div class="row">
+    <h1>QRcode result for</h1> 
+    <p><a href="{{ file_url }}">{{ filename }}</a></p>
 </div>
-</body>
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{url}}"/>
+    </div>
+    <div class="col-md-3">
+        <a href="/upload">Upload another one</a>
+    </div>
+</div>
+{% endblock %}
 
