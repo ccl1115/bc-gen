@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = 'uploads' + os.sep
 app.config['STATIC_FOLDER'] = 'static' + os.sep
-app.config['HOST'] = 'http://localhost:5000'
+app.config['HOST'] = 'http://bc-gen.yu-lu.info'
 
 
 @app.route("/")
