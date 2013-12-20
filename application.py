@@ -11,8 +11,6 @@ app.config['UPLOAD_FOLDER'] = 'uploads' + os.sep
 app.config['STATIC_FOLDER'] = 'static' + os.sep
 app.config['HOST'] = 'http://localhost:5000'
 
-print app
-
 
 @app.route("/")
 def index():
