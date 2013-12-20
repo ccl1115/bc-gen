@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = 'uploads' + os.sep
-app.config['STATIC_FOLDER'] = 'static' + os.sep
+app.config['STATIC_FOLDER'] = 'static' + os.sep + 'qrcodes' + os.sep
 app.config['HOST'] = 'http://bc-gen.yu-lu.info'
 
 
@@ -34,7 +34,7 @@ def uploaded_file(filename):
 
 @app.route('/barcode/<filename>')
 def barcode(filename):
-    url = app.config['HOST'] + '/static/' + filename + '.png'
+    url = app.config['HOST'] + '/static/qrcodes/' + filename + '.png'
     file_url = app.config['HOST'] + '/uploads/' + filename
     return render_template('barcode.html', filename=filename, file_url=file_url, url=url)
 
